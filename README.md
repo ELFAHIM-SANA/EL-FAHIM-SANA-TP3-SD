@@ -119,6 +119,234 @@
 
 
 
+--------------Partie sécurité-------------------------------
+
+Personnaliser le formulaire d'authentification:
+
+La classe SecurityConfig.java:
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/1b59af9d-8674-4d0d-b104-29198123e4a1)
+
+
+L'ajout d'un endpoint dans la classe SecurityController.java:
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/c479534b-21fc-4a3c-963d-0c6e93a8606f)
+
+
+Le fichier login.html:
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/3a7ba3c3-ae0f-4163-ade1-85c9244bf14b)
+
+L'affichage
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/352194d9-1ce4-4b74-93e1-79818ee24a31)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/5426169a-43f7-49f0-82b3-a34b5dfe59b7)
+
+
+Utilisation des annotations pour protéger les méthodes :
+
+La classe SecurityConfig.java:
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/b1dabbd4-8721-4496-9762-6503405fc1e1)
+
+
+La classe PatientController.java:
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/ee2f227c-e77e-4cf0-8144-1b74a1159a9d)
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/7dc46807-db19-4bce-bf0a-7bc54c9154c0)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/14b40551-2a0f-48b5-b794-040ba8b6dfac)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/69c258ce-5879-4731-a496-ea43cb064cd8)
+
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/12e45152-f101-4993-b4a9-bf0ca53949fd)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/a350e278-c0ba-47ca-860c-8308e5035ca6)
+
+
+Stockage des utilisateurs dans la base de données:
+
+La classe SecurityConfig.java : méthode pour la gestion des utilisateurs basée sur une base de données relationnelle
+
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/16b74788-afa7-4592-af2b-6988082895d3)
+
+
+Le fichier schema.sql: le script SQL pour créer les tables users et authorities.
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/832344e1-0185-4b36-94c6-71f6488c3e30)
+
+Le fichier data.sql: le script SQL pour créer les utilisateurs .
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/057ff512-cd0a-4fb9-96f7-75c9137096ba)
+
+
+Le fichier application.propreties :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/adfa57cd-8a45-440e-acee-eac22a1f774e)
+
+Insertion des utilisateurs dans l'application : (On a supprimé le fichier data.sql)
+
+Créer des utilisateurs avec des roles dans la classe HopitalApplication.java : La méthode configure un bean qui 
+initialise trois utilisateurs (user11, user22, et admin2) dans la base de données si ces utilisateurs n'existent pas déjà,
+avec des rôles et des mots de passe encodés.
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/1e2acf1f-f7ec-4862-a9bc-288d8f83ceda)
+
+
+La base de données mysql :
+
+La table users :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/472b060b-eeb5-4e0b-88a5-521b1a6042cc)
+
+La table authorities :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/471702ed-db20-45f5-a46b-49cf80673318)
+
+Test : Connexion en tant qu'utilisateur user11:
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/6ae329c3-f9cb-459e-a98c-ef9cba04400b)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/061bf320-2480-43b3-8fcb-09bd52fab408)
+
+
+Test : Connexion en tant qu'utilisateur admin2:
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/1b0173dd-cc8f-4371-be0e-f50dc9388f2f)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/f8b24e37-6b7f-428f-88cb-b813c77265a7)
+
+UserDetails Service:
+
+On a créé 3 packages dans le package security : entities, repo et service :
+
+Le package entities :
+
+L'entité AppUser :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/76edd3bf-292c-433c-87e4-7004f21fda9e)
+
+L'entité Approle:
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/7597d8cf-8749-40f5-adfc-efdfdb93d247)
+
+Le package repo :
+
+L'interface AppUserRepository :
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/25fa7efc-e235-4387-a172-d69706c6313e)
+
+L'interface AppRoleRepository :
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/82a0682c-6afa-4a50-8138-9d41f55c9810)
+
+Le package service :
+
+L'interface AccountService :
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/5d7b2f8b-209d-4401-92a4-4624acdc5e63)
+
+La classe AccountServiceImpl :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/2f88093a-8a87-4137-98ff-3299abd33e24)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/05fa9806-fe8b-452a-9239-03612311a428)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/0d7dde0f-3e9c-420d-a54d-7d8e5a42666d)
+
+
+La classe UserDetailsServiceImpl :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/97f7907f-1691-400a-9721-83afd8b7826e)
+
+
+Dans la classe SecurityConfig.java on va spécifier le service de gestion des utilisateurs qui sera utilisé par Spring Security
+pour récupérer les informations des utilisateurs lors de l'authentification : userDetailsServiceImpl :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/08326c0e-e0fb-4d9f-9673-e30f838b2a69)
+
+Dans la classe HopitalApplication.java on a créé une méthode qui initialise les rôles et les utilisateurs en ajoutant de nouveaux rôles et utilisateurs à l'application, puis en assignant les rôles appropriés aux utilisateurs lorsque l'application démarre :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/19dfd461-26ef-4e3c-9d90-96939d9680ff)
+
+
+Le teste : Connexion en tant que l'utilisateur "Sanae" et l'utiisateur "admin" :
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/d7dd063f-bf3f-4584-ab8f-edecbe8b76a2)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/af857783-946d-4b37-89ce-8f328b15f616)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/d1b65446-16d5-4e72-a404-8b324508a8fc)
+
+
+![image](https://github.com/ELFAHIM-SANA/EL-FAHIM-SANA-TP3-SD/assets/131165163/3a5b76fa-9f7c-45e0-80e8-c8b49c7f3b27)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
